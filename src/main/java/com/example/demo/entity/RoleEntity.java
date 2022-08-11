@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+//https://stackoverflow.com/questions/68688242/spring-boot-jpa-many-to-many-jackson-serialize-each-entity
 @Entity
 public class RoleEntity {
     @Id
