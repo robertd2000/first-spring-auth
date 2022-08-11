@@ -1,11 +1,24 @@
 package com.example.demo.model;
 
+import com.example.demo.entity.RoleEntity;
+import com.example.demo.entity.UserEntity;
+
 public class UserModel {
     private Long id;
     private String email;
     private String password;
     private Boolean banned;
     private String banReason;
+
+    public static UserModel userModel(UserEntity entity) {
+        UserModel model  = new UserModel();
+        model.setId(entity.getId());
+        model.setEmail(entity.getEmail());
+        model.setPassword(entity.getPassword());
+        model.setBanned(entity.getBanned());
+        model.setBanReason(entity.getBanReason());
+        return model;
+    }
 
     public UserModel(Long id, String email, String password, Boolean banned, String banReason) {
         this.id = id;

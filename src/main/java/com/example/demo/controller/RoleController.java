@@ -12,16 +12,12 @@ public class RoleController {
     private RoleService roleService;
 
     @PostMapping()
-    RoleEntity create(@RequestBody RoleEntity role) {
+    public RoleEntity create(@RequestBody RoleEntity role) {
         return roleService.createRole(role);
     }
 
-    @GetMapping("{value}")
-            @ResponseBody
-//    RoleEntity getByValue(@RequestParam String value) {
-//        return roleService.getRoleByValue(value);
-//    }
-    String getByValue(@RequestParam String value) {
-        return value;
+    @GetMapping("/{value}")
+    public RoleEntity getValue(@PathVariable("value") String value) {
+        return roleService.getRoleByValue(value);
     }
 }

@@ -17,7 +17,6 @@ public class RoleService {
     }
 
     public RoleEntity getRoleByValue(String value) {
-//        return repoRepo.findOne(value);
         return roleRepo.findOneByValue(value);
     }
 }

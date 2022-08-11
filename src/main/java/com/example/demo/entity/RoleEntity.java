@@ -18,7 +18,9 @@ public class RoleEntity {
     private String description;
 
     @ManyToMany()
-//    @JoinTable(name = )
+    @JoinTable(name = "users_roles",
+            joinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
     private List<UserEntity> users;
 
     public RoleEntity(Long id, String value, String description) {
